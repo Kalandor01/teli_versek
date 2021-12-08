@@ -1,18 +1,18 @@
 header, nav, article, aside, footer {
-    padding: 5px;
+    padding: 10px;
 }
 
-html {
+html, body {
     background-image: url("kep/hatter.jpg");
 }
 
 main {
     background-color: white;
     display: grid;
-    grid-template-areas: "h h h"
-                         "n n n"
-                         "a a s"
-                         "f f f";
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "h h h h h h"
+                         "n a a a s s"
+                         "f f f f f f";
     width: 90%;
     margin: auto;
 }
@@ -28,27 +28,68 @@ nav {
 }
 
 nav>ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 a {
     color: black;
+    text-decoration: none;
+}
+
+nav>ul>a>li {
+    background-color: rgb(0, 119, 255);
+    margin: 1px;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
 }
 
 article {
     grid-area: a;
 }
 
+.images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.images>div {
+    width: 100px;
+    margin: 10px;
+    padding: 5px;
+    padding-bottom: 15px;
+    box-shadow: 11px 11px 37px -2px #000000;
+}
+
+.images>div>img {
+    width: 90%;
+    margin: auto;
+}
+
+.no {
+    margin: 20px;
+    background-color: rgba(220, 220, 220, 0);
+    box-shadow: none;
+}
+
 aside {
     grid-area: s;
+    width: 20%;
 }
 
 footer {
     grid-area: f;
     text-align: center;
-    background-color: rgb(62, 143, 235);
+    background-color: rgb(0, 110, 255);
+}
+
+footer>h5 {
+    margin: 5px;
 }
 
 @media screen and (max-width:800px) {
