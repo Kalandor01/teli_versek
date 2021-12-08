@@ -9,10 +9,10 @@ html, body {
 main {
     background-color: white;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: "h h h h h h"
-                         "n a a a s s"
-                         "f f f f f f";
+    grid-template-columns: 20% 1fr 30%;
+    grid-template-areas: "h h h"
+                         "n a s"
+                         "f f f";
     width: 90%;
     margin: auto;
 }
@@ -33,7 +33,7 @@ nav>ul {
     margin: 0;
 }
 
-a {
+nav>ul>a {
     color: black;
     text-decoration: none;
 }
@@ -59,27 +59,31 @@ article {
 }
 
 .images>div {
-    width: 100px;
+    width: 150px;
     margin: 10px;
-    padding: 5px;
-    padding-bottom: 15px;
-    box-shadow: 11px 11px 37px -2px #000000;
+    padding: 10px;
+    padding-bottom: 25px;
+    box-shadow: 15px 15px 30px 5px #000000;
+    transform: rotate(-15deg);
 }
 
 .images>div>img {
-    width: 90%;
+    width: 100%;
     margin: auto;
 }
 
 .no {
     margin: 20px;
-    background-color: rgba(220, 220, 220, 0);
-    box-shadow: none;
+    box-shadow: none !important;
 }
 
 aside {
+    border-left: solid 1px rgba(139, 139, 139, 0.425);
     grid-area: s;
-    width: 20%;
+}
+
+aside>p {
+    text-align: justify;
 }
 
 footer {
@@ -92,6 +96,22 @@ footer>h5 {
     margin: 5px;
 }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width:900px) {
+    main {
+        grid-template-columns: none;
+        grid-template-areas: "h"
+                             "n"
+                             "a"
+                             "s"
+                             "f";
+    }
+    
+}
+
+@media screen and (max-width:500px) {
+    .images {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
     
 }
